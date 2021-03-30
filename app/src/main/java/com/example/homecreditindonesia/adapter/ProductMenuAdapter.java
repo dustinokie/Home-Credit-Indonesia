@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Point;
 import android.net.Uri;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.Display;
 import android.view.LayoutInflater;
@@ -14,17 +13,12 @@ import android.view.WindowManager;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.homecreditindonesia.R;
 import com.example.homecreditindonesia.activity.MainActivity;
 import com.example.homecreditindonesia.model.Item;
 import com.example.homecreditindonesia.utils.HCIUtils;
 import com.squareup.picasso.Picasso;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -112,7 +106,7 @@ public class ProductMenuAdapter extends BaseAdapter {
                 listMenus.add(menus);
             }
         } catch (Exception e) {
-            Toast.makeText(activity, e.toString(), Toast.LENGTH_LONG).show();
+            HCIUtils.showMessage(activity, e.toString());
         }
     }
 
